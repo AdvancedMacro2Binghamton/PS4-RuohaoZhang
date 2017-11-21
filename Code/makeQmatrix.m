@@ -14,13 +14,13 @@ n = size(pol_indx, 2);
 Q = sparse(m*n, m*n);
 
 % sequential way to construct Q:
-for xi = 1:n
-    for zi = 1:m
-        row = (xi - 1) * m +  zi;
-        col = (pol_indx(zi, xi) - 1) * m;
-        Q(row, col+1:col+m) = PI(zi,:);
-    end
-end
+%for xi = 1:n
+ %  for zi = 1:m
+ %      row = (xi - 1) * m +  zi;
+ %       col = (pol_indx(zi, xi) - 1) * m;
+ %      Q(row, col+1:col+m) = PI(zi,:);
+ %   end
+%end
 
 % alternative, vectorized way:
 rows = kron((1:m*n)', ones(m,1));
